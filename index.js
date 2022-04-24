@@ -90,7 +90,6 @@ function changeLands(name) {
 async function selectCard(illustrationId, name, artist) {
   artist = artist.replace(" ", "+").replace("&", "%26");
   json = await fetchCards(`https://api.scryfall.com/cards/search?q=${name}+a%3A%22${artist}%22+unique%3Aprints+l%3Aenglish+game%3Apaper`);
-  console.log(json);
 
   var sameIllustrations = [];
 
@@ -126,10 +125,8 @@ function printOwnedJson() {
 
 function addCard(card) {
   ownedCards.push(card);
-  console.log("card added");
 }
 
 function removeCard(card) {
   ownedCards = ownedCards.filter(c => c.illustration_id != card.illustration_id);
-  console.log("card removed");
 }

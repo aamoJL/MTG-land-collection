@@ -9,14 +9,16 @@
   <title>Scryfall land fetcher</title>
 </head>
 <body>
-  <div>
-    <button onclick="changeLands('plains')">Plains</button>
-    <button onclick="changeLands('island')">Island</button>
-    <button onclick="changeLands('swamp')">Swamp</button>
-    <button onclick="changeLands('mountain')">Mountain</button>
-    <button onclick="changeLands('forest')">Forest</button>
-  </div>
   <div class="sticky">
+    <div>
+      <button onclick="changeLands('plains')">Plains</button>
+      <button onclick="changeLands('island')">Island</button>
+    </div>
+    <div>
+      <button onclick="changeLands('swamp')">Swamp</button>
+      <button onclick="changeLands('mountain')">Mountain</button>
+      <button onclick="changeLands('forest')">Forest</button>
+    </div>
     <label><input type="checkbox" id="edit-mode-check">Edit mode</label>
     <button onclick="printOwnedJson()">Print and copy json</button>
   </div>
