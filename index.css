@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.col {
+  flex: 1;
+  max-width: 700px;
+  align-self: flex-start;
+}
+.sticky {
+  position: sticky;
+  top: 2em;
+}
+
+.page {
+  width: 100%;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.page img {
+  width: 100%;
+}
+
+.pageCount {
+  text-align: center;
+  font-size: 3em;
+}
+
+.print-title {
+  margin-top: 0.5em;
+  text-align: center;
+}
