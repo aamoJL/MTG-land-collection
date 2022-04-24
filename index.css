@@ -37,3 +37,11 @@ body {
   margin-top: 0.5em;
   text-align: center;
 }
+
+img.unowned {
+  filter: grayscale(100%) brightness(75%);
+}
+
+.owned-card {
+  filter: grayscale(0);
+}
