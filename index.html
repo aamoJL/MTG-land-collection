@@ -15,8 +15,8 @@
     <img class="color-icon" onclick="changeLands('swamp')" src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/B.svg" alt="Swamp">
     <img class="color-icon" onclick="changeLands('mountain')" src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/R.svg" alt="Mountain">
     <img class="color-icon" onclick="changeLands('forest')" src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/G.svg" alt="Forest">
-    <button onclick="printOwnedJson()">JSON</button>
-    <label><input type="checkbox" id="edit-mode-check">Edit</label>
+    <button id="json-btn" onclick="printOwnedJson()">JSON</button>
+    <label id="edit-label"><input type="checkbox" id="edit-mode-check">Edit</label>
   </header>
   <div id="container">
     <div class="col" id="cards"></div>

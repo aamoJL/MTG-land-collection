@@ -13,6 +13,7 @@ header {
   z-index: 10;
   top: 0;
   border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
 }
 button {
   border: 1px solid darkgray;
@@ -80,13 +81,20 @@ button:active {
   .col {
     max-width: none;
   }
+  #json-btn,
+  #edit-label {
+    display: none;
+  }
   #container {
     display: block;
   }
+  #cards {
+    margin-bottom: 35%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
   .page {
     margin-bottom: 0;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
   }
   .print-title {
     display: none;
@@ -103,6 +111,7 @@ button:active {
     border-top: 1px solid lightgray;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    box-sizing: border-box;
   }
   .right .page-title {
     font-size: smaller;
@@ -110,7 +119,8 @@ button:active {
   .right .page {
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     height: 100%;
     margin-left: 0;
     margin-bottom: 0.5em;
