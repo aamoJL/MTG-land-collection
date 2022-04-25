@@ -101,7 +101,8 @@ button:active {
     display: none;
   }
   .right {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     position: fixed;
     height: 25%;
