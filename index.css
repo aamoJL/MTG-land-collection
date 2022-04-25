@@ -1,5 +1,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  background-color: white;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid lightgray;
+}
+button {
+  border: 1px solid darkgray;
+  padding: 0.5em;
+}
+button:hover {
+  background-color: rgb(226, 226, 226);
+}
+button:active {
+  background-color: rgb(243, 243, 243);
 }
 
 #container {
@@ -14,7 +37,6 @@ body {
 }
 .sticky {
   position: sticky;
-  top: 2em;
 }
 
 .page {
@@ -28,20 +50,32 @@ body {
   width: 100%;
 }
 
-.pageCount {
+.color-icon {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  height: 2em;
+  width: 2em;
+}
+
+.page-title {
   text-align: center;
-  font-size: 3em;
+}
+#prints-title {
+  top: 2.4em;
 }
 
 .print-title {
-  margin-top: 0.5em;
   text-align: center;
 }
 
-img.unowned {
+.unowned {
   filter: grayscale(100%) brightness(75%);
 }
-
 .owned-card {
   filter: grayscale(0);
+}
+.card-thumbnail {
+  border-radius: 4.75% / 3.5%;
 }

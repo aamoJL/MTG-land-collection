@@ -71,8 +71,8 @@ async function cardFetching(name = "plains") {
       if(j < 8) {i++;}
     };
 
-    var pageCountElement = document.createElement("div");
-    pageCountElement.classList.add("pageCount");
+    var pageCountElement = document.createElement("h2");
+    pageCountElement.classList.add("page-title");
     pageCountElement.append(pageCount);
 
     wrapper.append(pageCountElement);
