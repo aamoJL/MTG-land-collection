@@ -4,7 +4,6 @@ body {
   padding: 0;
 }
 header {
-  width: 100%;
   display: flex;
   column-gap: 1em;
   align-items: center;
