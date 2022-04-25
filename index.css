@@ -4,6 +4,7 @@ body {
   padding: 0;
 }
 header {
+  width: 100%;
   display: flex;
   column-gap: 1em;
   align-items: center;
@@ -38,6 +39,9 @@ button:active {
 .sticky {
   position: sticky;
 }
+.right {
+  top: 2.4em;
+}
 
 .page {
   width: 100%;
@@ -49,7 +53,6 @@ button:active {
 .page img {
   width: 100%;
 }
-
 .color-icon {
   padding: 0;
   margin: 0;
@@ -58,18 +61,12 @@ button:active {
   height: 2em;
   width: 2em;
 }
-
 .page-title {
   text-align: center;
 }
-#prints-title {
-  top: 2.4em;
-}
-
 .print-title {
   text-align: center;
 }
-
 .unowned {
   filter: grayscale(100%) brightness(75%);
 }
@@ -78,4 +75,51 @@ button:active {
 }
 .card-thumbnail {
   border-radius: 4.75% / 3.5%;
+}
+
+@media only screen and (max-width: 800px) {
+  .col {
+    max-width: none;
+  }
+  #container {
+    display: block;
+  }
+  .page {
+    margin-bottom: 0;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+  .print-title {
+    display: none;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 230px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    background-color: white;
+    border-top: 1px solid lightgray;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .right .page-title {
+    font-size: smaller;
+  }
+  .right .page {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    height: 100%;
+    margin-left: 0;
+    margin-bottom: 0.5em;
+  }
+  .right .page div {
+    display: flex;
+  }
+  .right .page div img {
+    width: auto;
+  }
 }
