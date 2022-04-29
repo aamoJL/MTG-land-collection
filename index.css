@@ -71,7 +71,7 @@ button:active {
 .unowned {
   filter: grayscale(100%) brightness(75%);
 }
-.owned-card {
+.owned {
   filter: grayscale(0);
 }
 .card-thumbnail {

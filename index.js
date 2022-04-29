@@ -28,56 +28,59 @@ async function cardFetching(name = "plains") {
     cards.push(...json.data);
   }
 
-  const cardCount = cards.length;
-  var pageCount = 1;
-
+  var page = document.createElement("div");
+  page.classList.add("page");
+  
   for (let i = 0; i < cards.length; i++) {
     
-    var page = document.createElement("div");
-    page.classList.add("page");
+    if(i % 9 == 0){
+      // Create page
+      page = document.createElement("div");
+      page.classList.add("page");
+      
+      var pageCount = parseInt(1 + i/9);
+      var pageCountElement = document.createElement("h2");
+      pageCountElement.classList.add("page-title");
+      pageCountElement.append(pageCount);
+
+      wrapper.append(pageCountElement);
+      wrapper.append(page);
+    }
     
-    for (let j = 0; j < 9; j++) {
-      if(i >= cardCount){break;}
-      var card = cards[i];
-      var img = document.createElement("img");
-      var isOwned = ownedCards.some(e => e.illustration_id === card.illustration_id);
-      img.classList.add("card-thumbnail");
-      if(isOwned){
-        img.classList.add("owned-card");
-      }
-      else{img.classList.add("unowned");}
-      img.addEventListener("click", ((card, event) => {
-        if(document.getElementById("edit-mode-check").checked == true){
-          var isOwned = ownedCards.some(e => e.illustration_id === card.illustration_id);
-          // Edit mode
-          if(isOwned){
-            removeCard(card);
-            event.target.classList.remove("owned");
-            event.target.classList.add("unowned");
-          }
-          else{
-            addCard(card);
-            event.target.classList.add("owned");
-            event.target.classList.remove("unowned");
-          }
+    var card = cards[i];
+    var img = document.createElement("img");
+    var isOwned = ownedCards.some(e => e.illustration_id === card.illustration_id);
+    
+    img.classList.add("card-thumbnail");
+    
+    if(isOwned){
+      img.classList.add("owned");
+    }
+    else{img.classList.add("unowned");}
+    
+    img.addEventListener("click", ((card, event) => {
+      if(document.getElementById("edit-mode-check").checked == true){
+        var isOwned = ownedCards.some(e => e.illustration_id === card.illustration_id);
+        // Edit mode
+        if(isOwned){
+          removeCard(card);
+          event.target.classList.remove("owned");
+          event.target.classList.add("unowned");
         }
         else{
-          // Select mode
-          selectCard(card.illustration_id, card.name, card.artist);
+          addCard(card);
+          event.target.classList.add("owned");
+          event.target.classList.remove("unowned");
         }
-      }).bind(this, card));
-      img.src = card.image_uris.normal;
-      page.append(img);
-      if(j < 8) {i++;}
-    };
-
-    var pageCountElement = document.createElement("h2");
-    pageCountElement.classList.add("page-title");
-    pageCountElement.append(pageCount);
-
-    wrapper.append(pageCountElement);
-    wrapper.append(page);
-    pageCount++;
+      }
+      else{
+        // Select mode
+        selectCard(card.illustration_id, card.name, card.artist);
+      }
+    }).bind(this, card));
+    
+    img.src = card.image_uris.normal;
+    page.append(img);
 
     allCards = cards;
   }
